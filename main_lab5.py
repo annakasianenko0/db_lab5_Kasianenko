@@ -59,7 +59,9 @@ for row in rows:
 plt.bar(categories, ratings)
 plt.xlabel('Book category')
 plt.ylabel('Average rating')
+plt.savefig(f"{view_name_1}.png")
 plt.show()
+plt.close()
 
 
 rows = fetch_rows(f"SELECT * FROM {view_name_2}")
@@ -72,7 +74,9 @@ for row in rows:
 fig, ax = plt.subplots()
 ax.pie(vals, labels=labels, autopct='%1.1f%%')
 ax.axis("equal")
+fig.savefig(f"{view_name_2}.png")
 plt.show()
+plt.close(fig)
 
 
 
@@ -86,5 +90,7 @@ for row in rows:
 plt.bar(authors, ratings)
 plt.xlabel('Author')
 plt.ylabel('Average rating')
+plt.savefig(f"{view_name_3}.png")
 plt.show()
+plt.close()
 
